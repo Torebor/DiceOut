@@ -22,9 +22,20 @@ namespace DiceOut
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public int Die;
+        public Random RamdomGenerator = new Random();
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void RollButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            // DieValueText.Text = "Button CLicked";
+            int DieValue = RamdomGenerator.Next(1, 7);
+            DieValueText.Text = $"The vaule is {DieValue}.";
+
         }
     }
 }
